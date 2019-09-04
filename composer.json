@@ -1,0 +1,16 @@
+{
+    "autoload": {
+        "psr-4": {
+            "config\\" : "./config",
+            "core\\" : "./core",
+            "models\\" : "./models",
+            "widgets\\" : "./widgets",
+            "controllers\\" : "./controllers",
+            "exceptions\\" : "./exceptions"
+        }
+    },
+    "require": {
+        "twig/twig": "^2.0",
+      "ext-pdo": "*"
+    }
+}

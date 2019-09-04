@@ -1,0 +1,5 @@
+{% extends 'layouts/main.twig' %}
+{% block title %}Edit{% endblock %}
+{% block main %}
+    {% include 'news/form.twig' with {'news': news} %}
+{% endblock %}

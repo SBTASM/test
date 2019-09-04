@@ -1,0 +1,14 @@
+<form id="news-form" method="post" data-id="{{ news.id }}">
+    <div class="form-group">
+        <label for="exampleFormControlInput1">Title</label>
+        <input type="title" name="title" class="form-control" id="title" value="{{ news.title }}">
+    </div>
+    <div class="form-group">
+        <label for="content">Content</label>
+        <textarea class="form-control" name="content" id="content" rows="8">{{ news.content }}</textarea>
+    </div>
+    <div class="text-center">
+        <button type="submit" class="btn btn-primary"><i class="glyphicon glyphicon-save"></i>&nbsp;Save</button>
+        <a id="delete" href="?r=main/delete&id={{ news.id }}" class="btn btn-danger"><i class="glyphicon glyphicon-trash"></i>&nbsp;Delete</a>
+    </div>
+</form>

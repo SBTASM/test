@@ -1,0 +1,36 @@
+{% extends 'layouts/main.twig' %}
+{% block title %}Main page{% endblock %}
+{% block main %}
+
+    {% if news|length == 0 %}
+        <p class="text-center h3">Sorry, Nothing to display!</p>
+    {% else %}
+        {%  for item in news %}
+        <div class="col-md-12">
+            <div class="fn2-inner">
+                <div class="fn2-meta">{{ item.title }} </div>
+                <em>{{ item.created_at }}</em>
+                <p>{{ item.content }}</p>
+                <div class="pull-right">
+                    <a href="?r=main/edit&id={{ item.id }}"><i class="glyphicon glyphicon-pencil"></i>&nbsp;Edit</a>
+                </div>
+            </div>
+        </div>
+
+    {% endfor %}
+    {% endif %}
+
+    {% if pages > 1 %}
+        <nav aria-label="Page navigation example">
+            <ul class="pagination">
+                {% for i in 1..pages %}
+                    <li class="page-item">
+                        <a class="page-link" href="?page={{ i }}">{{ i }}</a>
+                    </li>
+                {% endfor %}
+            </ul>
+        </nav>
+    {% endif %}
+
+
+{% endblock %}
